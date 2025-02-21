@@ -24,6 +24,12 @@ header{
     margin: 1em 0;
     font-size: 1.2rem;
 }
+#main{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
 .container{
     background-color: var(--bg-color);
     text-align: center;

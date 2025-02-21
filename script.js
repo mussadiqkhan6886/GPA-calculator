@@ -1,31 +1,37 @@
-const form = document.querySelector('form');
 const main =  document.querySelector('#main');
 const footer = document.querySelector("#footer");
 let course = 3;
 let semester = 1;
-function addCourse(){
+let formId = 1;
+function addCourse(numberForm){
+    const form = document.querySelector(`#form-${numberForm}`);
     course += 1;
     const div = document.createElement('div');
     div.setAttribute('class', 'course-div');
-    const inputCourse = document.createElement('input');
-    const inputGrade = document.createElement('input');
-    const inputCredit = document.createElement('input');
-    inputCourse.autocomplete = 'off';
-    inputGrade.autocomplete = 'off';
-    inputCredit.autocomplete = 'off';
-    inputCourse.placeholder = `Course ${course}`;
-    inputGrade.placeholder = 'Grade';
-    inputCredit.placeholder = 'Credits';
-    inputCourse.setAttribute('class', 'course');
-    inputCredit.setAttribute('class', 'half');
-    inputCredit.classList.add('credit');
-    inputGrade.setAttribute('class', 'half');
-    inputGrade.classList.add('grade');
-    inputCredit.type = 'number';
+    div.innerHTML = `
+        <input type="text" autocomplete="off" placeholder="Course ${course}" id="course1" class="course">
+        <input type="text" autocomplete="off" placeholder="Grade" id="grade" class="grade half">
+        <input type="number" autocomplete="off" placeholder="Credits" id="credit" class="credit half">
+    `
+    // const inputCourse = document.createElement('input');
+    // const inputGrade = document.createElement('input');
+    // const inputCredit = document.createElement('input');
+    // inputCourse.autocomplete = 'off';
+    // inputGrade.autocomplete = 'off';
+    // inputCredit.autocomplete = 'off';
+    // inputCourse.placeholder = `Course ${course}`;
+    // inputGrade.placeholder = 'Grade';
+    // inputCredit.placeholder = 'Credits';
+    // inputCourse.setAttribute('class', 'course');
+    // inputCredit.setAttribute('class', 'half');
+    // inputCredit.classList.add('credit');
+    // inputGrade.setAttribute('class', 'half');
+    // inputGrade.classList.add('grade');
+    // inputCredit.type = 'number';
 
-    div.appendChild(inputCourse);
-    div.appendChild(inputGrade);
-    div.appendChild(inputCredit);
+    // div.appendChild(inputCourse);
+    // div.appendChild(inputGrade);
+    // div.appendChild(inputCredit);
 
     form.appendChild(div);
 }
@@ -65,13 +71,14 @@ function Calculate(){
 }
 function addSem(){
     semester += 1;
-    const container = document.createElement('div');
+    formId += 1;
+    const container = document.createElement('section');
     container.innerHTML = `
         <div class="container">
             <h2>IQRA UNIVERSITY GPA Calculator</h2>
             <div class="main">
                 <h3>Semester ${semester}</h3>
-                <form>
+                <form id='form-${formId}'>
                     <div class="course-div">
                         <input type="text" autocomplete="off" placeholder="Course 1" id="course1" class="course">
                         <input type="text" autocomplete="off" placeholder="Grade" id="grade" class="grade half">
@@ -90,7 +97,7 @@ function addSem(){
                 </form>
             </div>
             <div class="add-more-course-div">
-                <button id="add-course" onclick="addCourse()">Add Course</button>
+                <button id="add-course" onclick="addCourse(${formId})">Add Course</button>
                 <button onclick="addSem()">Add Semester</button>
                 <button id="clear-course" onclick="clearAll()">Clear All</button>
             </div>
@@ -110,8 +117,8 @@ function addSem(){
 // to be add
 // delete course
 // cgpa
-// add sem
 // how to use calculator
 // iqra uni grading sheet
 // print out result as pdf
 // add iqra uni logo
+

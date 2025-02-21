@@ -11,43 +11,45 @@
         <h1>GPA Calculator</h1>
     </header>
     <main id="main">
-        <div class="container">
-            <h2>IQRA UNIVERSITY GPA Calculator</h2>
-            <div class="main">
-                <h3>Semester 1</h3>
-                <form>
-                    <div class="course-div">
-                        <input type="text" autocomplete="off" placeholder="Course 1" id="course1" class="course">
-                        <input type="text" autocomplete="off" placeholder="Grade" id="grade" class="grade half">
-                        <input type="number" autocomplete="off" placeholder="Credits" id="credit" class="credit half">
-                    </div>
-                    <div class="course-div">
-                        <input type="text" autocomplete="off" placeholder="Course 2" id="course1" class="course">
-                        <input type="text" autocomplete="off" placeholder="Grade" id="grade" class="grade half">
-                        <input type="number" autocomplete="off" placeholder="Credits" id="credit" class="credit half">
-                    </div>
-                    <div class="course-div">
-                        <input type="text" autocomplete="off" placeholder="Course 3" id="course1" class="course">
-                        <input type="text" autocomplete="off" placeholder="Grade" id="grade" class="grade half">
-                        <input type="number" autocomplete="off" placeholder="Credits" id="credit" class="credit half">
-                    </div>
-                </form>
+        <section>
+            <div class="container">
+                <h2>IQRA UNIVERSITY GPA Calculator</h2>
+                <div class="main">
+                    <h3>Semester 1</h3>
+                    <form id="form-1">
+                        <div class="course-div">
+                            <input type="text" autocomplete="off" placeholder="Course 1" id="course1" class="course">
+                            <input type="text" autocomplete="off" placeholder="Grade" id="grade" class="grade half">
+                            <input type="number" autocomplete="off" placeholder="Credits" id="credit" class="credit half">
+                        </div>
+                        <div class="course-div">
+                            <input type="text" autocomplete="off" placeholder="Course 2" id="course1" class="course">
+                            <input type="text" autocomplete="off" placeholder="Grade" id="grade" class="grade half">
+                            <input type="number" autocomplete="off" placeholder="Credits" id="credit" class="credit half">
+                        </div>
+                        <div class="course-div">
+                            <input type="text" autocomplete="off" placeholder="Course 3" id="course1" class="course">
+                            <input type="text" autocomplete="off" placeholder="Grade" id="grade" class="grade half">
+                            <input type="number" autocomplete="off" placeholder="Credits" id="credit" class="credit half">
+                        </div>
+                    </form>
+                </div>
+                <div class="add-more-course-div">
+                    <button id="add-course" onclick="addCourse(1)">Add Course</button>
+                    <button onclick="addSem()">Add Semester</button>
+                    <button id="clear-course" onclick="clearAll()">Clear All</button>
+                </div>
+                <div class="calculate-div">
+                    <button id="calculate" onclick="Calculate()">Calculate</button>
+                </div>
             </div>
-            <div class="add-more-course-div">
-                <button id="add-course" onclick="addCourse()">Add Course</button>
-                <button onclick="addSem()">Add Semester</button>
-                <button id="clear-course" onclick="clearAll()">Clear All</button>
-            </div>
-            <div class="calculate-div">
-                <button id="calculate" onclick="Calculate()">Calculate</button>
-            </div>
-        </div>
-        <footer id="footer">
-            <div class="result">
-                <h4>Result</h4>
-                <p>Semester 1 GPA <span id="result">0.00</span></p>
-            </div>
-        </footer>
+            <footer id="footer">
+                <div class="result">
+                    <h4>Result</h4>
+                    <p>Semester 1 GPA <span id="result">0.00</span></p>
+                </div>
+            </footer>
+        </section>
     </main>
     <script src="script.js"></script>
 </body>
