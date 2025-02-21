@@ -19,6 +19,7 @@ function addCourse(){
     inputCredit.classList.add('credit');
     inputGrade.setAttribute('class', 'half');
     inputGrade.classList.add('grade');
+    inputCredit.type = 'number';
 
     div.appendChild(inputCourse);
     div.appendChild(inputGrade);
@@ -30,6 +31,7 @@ function addCourse(){
 function clearAll(){
     const inputs = document.querySelectorAll('input');
     inputs.forEach(input => input.value = '');
+    document.querySelector("#result").innerHTML = '0.00'
 }
 
 function Calculate(){
