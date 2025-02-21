@@ -27,10 +27,9 @@ header{
 .container{
     background-color: var(--bg-color);
     text-align: center;
-    margin: 0 1em;
     box-shadow: 1px 1px 5px var(--shadow-container);
     border-radius: 5px;
-    max-width: 500px;
+    max-width: 480px;
 }
 .container h2{
     margin: 0 0 1.1em 0;
@@ -91,8 +90,12 @@ header{
     box-shadow: inset 1px 1px 2px black;
     border-radius: 0;
 }
+#footer{
+    margin-top: 10px;
+}
 .result{
     margin-bottom: 3em;
+    text-align: center;
 }
 
 #result{
