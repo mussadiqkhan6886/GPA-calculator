@@ -33,10 +33,29 @@ function clearAll(){
 }
 
 function Calculate(){
-    const courseInput = document.querySelectorAll('.course');
-    const courseGrade = document.querySelectorAll('.grade');
-    const courseCredit = document.querySelectorAll('.credit');
-    console.log(courseInput);
-    console.log(courseGrade);
-    console.log(courseCredit);
+    const courses = document.querySelectorAll("form div");
+    let totalPoints = 0;
+    let totalCredits = 0;
+    courses.forEach(course => {
+        let grades = course.children[1].value;
+        let credit = parseFloat(course.children[2].value);
+        if(grades === 'a'){
+            grades = 4;
+        }else if(grades === 'b+'){
+            grades = 3.5;
+        }else if(grades === 'b'){
+            grades = 3;
+        }else if(grades === 'c+'){
+            grades = 2.5;
+        }else if(grades === 'c'){
+            grades = 2;
+        }else{
+            grades = 0;
+        }
+
+        totalPoints += grades * credit;
+        totalCredits += credit;
+    });
+    let gpa = totalCredits ? (totalPoints / totalCredits).toFixed(2) : 'N/A';
+    document.querySelector("#result").innerHTML = gpa;
 }
