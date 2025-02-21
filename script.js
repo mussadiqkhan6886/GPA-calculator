@@ -61,3 +61,11 @@ function Calculate(){
     let gpa = totalCredits ? (totalPoints / totalCredits).toFixed(2) : 'N/A';
     document.querySelector("#result").innerHTML = gpa;
 }
+// to be add
+// delete course
+// cgpa
+// add sem
+// how to use calculator
+// iqra uni grading sheet
+// print out result as pdf
+// add iqra uni logo
