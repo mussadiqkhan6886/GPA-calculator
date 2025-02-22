@@ -121,4 +121,4 @@ function addSem(){
 // iqra uni grading sheet
 // print out result as pdf
 // add iqra uni logo
-
+// fixed clear all , calculate and more 
