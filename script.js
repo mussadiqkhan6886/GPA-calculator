@@ -42,33 +42,46 @@ function clearAll(){
     document.querySelector("#result").innerHTML = '0.00'
 }
 
-function Calculate(){
-    const courses = document.querySelectorAll("form div");
-    let totalPoints = 0;
-    let totalCredits = 0;
-    courses.forEach(course => {
-        let grades = course.children[1].value;
-        let credit = parseFloat(course.children[2].value);
-        if(grades === 'a'){
-            grades = 4;
-        }else if(grades === 'b+'){
-            grades = 3.5;
-        }else if(grades === 'b'){
-            grades = 3;
-        }else if(grades === 'c+'){
-            grades = 2.5;
-        }else if(grades === 'c'){
-            grades = 2;
-        }else{
-            grades = 0;
-        }
+function Calculate() {
+    const forms = document.querySelectorAll("form");  // Select all semester forms
+    let overallTotalPoints = 0;
+    let overallTotalCredits = 0;
 
-        totalPoints += grades * credit;
-        totalCredits += credit;
+    forms.forEach((form, index) => {
+        let totalPoints = 0;
+        let totalCredits = 0;
+        const courses = form.querySelectorAll(".course-div"); // Get all courses in that semester
+
+        courses.forEach(course => {
+            let grade = course.children[1].value.toLowerCase(); // Get grade and convert to lowercase
+            let credit = parseFloat(course.children[2].value);
+
+            // Convert grades to GPA scale
+            if (grade === 'a') grade = 4;
+            else if (grade === 'b+') grade = 3.5;
+            else if (grade === 'b') grade = 3;
+            else if (grade === 'c+') grade = 2.5;
+            else if (grade === 'c') grade = 2;
+            else grade = 0; // Default for invalid grades
+
+            totalPoints += grade * credit;
+            totalCredits += credit;
+        });
+
+        // Calculate GPA for this semester
+        let gpa = totalCredits ? (totalPoints / totalCredits).toFixed(2) : 'N/A';
+        document.querySelectorAll("#result")[index].innerHTML = gpa; // Update corresponding result
+
+        // Add to overall CGPA calculation
+        overallTotalPoints += totalPoints;
+        overallTotalCredits += totalCredits;
     });
-    let gpa = totalCredits ? (totalPoints / totalCredits).toFixed(2) : 'N/A';
-    document.querySelector("#result").innerHTML = gpa;
+
+    // Optionally, calculate CGPA across all semesters
+    let cgpa = overallTotalCredits ? (overallTotalPoints / overallTotalCredits).toFixed(2) : 'N/A';
+    console.log("CGPA:", cgpa); // You can display this in the UI
 }
+
 function addSem(){
     semester += 1;
     formId += 1;
