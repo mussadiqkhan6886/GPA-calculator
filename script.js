@@ -100,52 +100,52 @@ function addSem(){
             <div class="main">
                 <h3>Semester ${semester}</h3>
                 <form id='form-${formId}'>
-                    <div class="course-div">
-                        <input type="text" autocomplete="off" placeholder="Course 1" id="course1" class="course">
-                        <select class="grade half">
-                                <option value="">Enter Grade</option>
-                                <option value="a">A</option>
-                                <option value="b+">B+</option>
-                                <option value="b">B</option>
-                                <option value="c+">C+</option>
-                                <option value="c">C</option>
-                                <option value="f">F</option>
-                            </select>
-                        <input type="number" autocomplete="off" placeholder="Credits" id="credit" class="credit half">
-                    </div>
-                    <div class="course-div">
-                        <input type="text" autocomplete="off" placeholder="Course 2" id="course1" class="course">
-                        <select class="grade half">
-                                <option value="">Enter Grade</option>
-                                <option value="a">A</option>
-                                <option value="b+">B+</option>
-                                <option value="b">B</option>
-                                <option value="c+">C+</option>
-                                <option value="c">C</option>
-                                <option value="f">F</option>
-                            </select>
-                        <input type="number" autocomplete="off" placeholder="Credits" id="credit" class="credit half">
-                    </div>
-                    <div class="course-div">
-                        <input type="text" autocomplete="off" placeholder="Course 3" id="course1" class="course">
-                        <select class="grade half">
-                                <option value="">Enter Grade</option>
-                                <option value="a">A</option>
-                                <option value="b+">B+</option>
-                                <option value="b">B</option>
-                                <option value="c+">C+</option>
-                                <option value="c">C</option>
-                                <option value="f">F</option>
-                            </select>
-                        <input type="number" autocomplete="off" placeholder="Credits" id="credit" class="credit half">
+                        <div class="course-div">
+                            <input type="text" autocomplete="off" placeholder="Course 1" id="course1" class="course">
+                            <select class="grade half">
+                                    <option value="">Enter Grade</option>
+                                    <option value="a">A</option>
+                                    <option value="b+">B+</option>
+                                    <option value="b">B</option>
+                                    <option value="c+">C+</option>
+                                    <option value="c">C</option>
+                                    <option value="f">F</option>
+                                </select>
+                            <input type="number" autocomplete="off" placeholder="Credits" id="credit" class="credit half">
+                        </div>
+                        <div class="course-div">
+                            <input type="text" autocomplete="off" placeholder="Course 2" id="course1" class="course">
+                            <select class="grade half">
+                                    <option value="">Enter Grade</option>
+                                    <option value="a">A</option>
+                                    <option value="b+">B+</option>
+                                    <option value="b">B</option>
+                                    <option value="c+">C+</option>
+                                    <option value="c">C</option>
+                                    <option value="f">F</option>
+                                </select>
+                            <input type="number" autocomplete="off" placeholder="Credits" id="credit" class="credit half">
+                        </div>
+                        <div class="course-div">
+                            <input type="text" autocomplete="off" placeholder="Course 3" id="course1" class="course">
+                            <select class="grade half">
+                                    <option value="">Enter Grade</option>
+                                    <option value="a">A</option>
+                                    <option value="b+">B+</option>
+                                    <option value="b">B</option>
+                                    <option value="c+">C+</option>
+                                    <option value="c">C</option>
+                                    <option value="f">F</option>
+                                </select>
+                            <input type="number" autocomplete="off" placeholder="Credits" id="credit" class="credit half">
                     </div>
                 </form>
             </div>
             <div class="add-more-course-div">
-                <button id="add-course" onclick="addCourse(${formId})">Add Course</button>
-                <button onclick="addSem()">Add Semester</button>
-                <button id="clear-course" onclick="clearAll()">Clear All</button>
-            </div>
+                        <button id="add-course" onclick="addCourse(${formId})">Add Course</button>
+                        <button onclick="addSem()">Add Semester</button>
+                        <button id="clear-course" onclick="clearAll()">Clear All</button>
+                    </div>
             <div class="calculate-div">
                 <button id="calculate" onclick="Calculate()">Calculate</button>
             </div>
@@ -167,3 +167,4 @@ function addSem(){
 // print out result as pdf
 // add iqra uni logo
 // fixed clear all , calculate and more 
+
