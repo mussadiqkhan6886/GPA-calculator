@@ -102,17 +102,41 @@ function addSem(){
                 <form id='form-${formId}'>
                     <div class="course-div">
                         <input type="text" autocomplete="off" placeholder="Course 1" id="course1" class="course">
-                        <input type="text" autocomplete="off" placeholder="Grade" id="grade" class="grade half">
+                        <select class="grade half">
+                                <option value="">Enter Grade</option>
+                                <option value="a">A</option>
+                                <option value="b+">B+</option>
+                                <option value="b">B</option>
+                                <option value="c+">C+</option>
+                                <option value="c">C</option>
+                                <option value="f">F</option>
+                            </select>
                         <input type="number" autocomplete="off" placeholder="Credits" id="credit" class="credit half">
                     </div>
                     <div class="course-div">
                         <input type="text" autocomplete="off" placeholder="Course 2" id="course1" class="course">
-                        <input type="text" autocomplete="off" placeholder="Grade" id="grade" class="grade half">
+                        <select class="grade half">
+                                <option value="">Enter Grade</option>
+                                <option value="a">A</option>
+                                <option value="b+">B+</option>
+                                <option value="b">B</option>
+                                <option value="c+">C+</option>
+                                <option value="c">C</option>
+                                <option value="f">F</option>
+                            </select>
                         <input type="number" autocomplete="off" placeholder="Credits" id="credit" class="credit half">
                     </div>
                     <div class="course-div">
                         <input type="text" autocomplete="off" placeholder="Course 3" id="course1" class="course">
-                        <input type="text" autocomplete="off" placeholder="Grade" id="grade" class="grade half">
+                        <select class="grade half">
+                                <option value="">Enter Grade</option>
+                                <option value="a">A</option>
+                                <option value="b+">B+</option>
+                                <option value="b">B</option>
+                                <option value="c+">C+</option>
+                                <option value="c">C</option>
+                                <option value="f">F</option>
+                            </select>
                         <input type="number" autocomplete="off" placeholder="Credits" id="credit" class="credit half">
                     </div>
                 </form>
