@@ -10,7 +10,15 @@ function addCourse(numberForm){
     div.setAttribute('class', 'course-div');
     div.innerHTML = `
         <input type="text" autocomplete="off" placeholder="Course ${course}" id="course1" class="course">
-        <input type="text" autocomplete="off" placeholder="Grade" id="grade" class="grade half">
+        <select class="grade half">
+            <option value="">Enter Grade</option>
+            <option value="a">A</option>
+            <option value="b+">B+</option>
+            <option value="b">B</option>
+            <option value="c+">C+</option>
+            <option value="c">C</option>
+            <option value="f">F</option>
+        </select>
         <input type="number" autocomplete="off" placeholder="Credits" id="credit" class="credit half">
     `
     // const inputCourse = document.createElement('input');
@@ -53,7 +61,7 @@ function Calculate() {
         const courses = form.querySelectorAll(".course-div"); // Get all courses in that semester
 
         courses.forEach(course => {
-            let grade = course.children[1].value.toLowerCase(); // Get grade and convert to lowercase
+            let grade = course.children[1].value; // Get grade and convert to lowercase
             let credit = parseFloat(course.children[2].value);
 
             // Convert grades to GPA scale

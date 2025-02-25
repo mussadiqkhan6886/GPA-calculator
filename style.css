@@ -133,3 +133,6 @@ header{
 .calculate-div button:hover{
     filter: contrast(200%);
 }
+.grade{
+    cursor: pointer;
+}
