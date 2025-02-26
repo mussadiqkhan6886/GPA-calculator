@@ -5,6 +5,7 @@
     --bg-color: white;
     --shadow-container: #0000008e;
     --input-course-bg: #d3d3d369;
+    --result-bg: #FFAB5B;
 }
 
 *{
@@ -36,6 +37,7 @@ header{
     box-shadow: 1px 1px 5px var(--shadow-container);
     border-radius: 5px;
     max-width: 480px;
+    margin: 0 0.5rem;
 }
 .container h2{
     margin: 0 0 1.1em 0;
@@ -153,4 +155,13 @@ header{
     100%{
         opacity: 0;
     }
+}
+aside{
+    width: 100%;
+    background-color: var(--result-bg);
+    text-align: center;
+    padding: 0.5rem 0 1rem;
+}
+aside h4{
+    margin-bottom: 10px;
 }
