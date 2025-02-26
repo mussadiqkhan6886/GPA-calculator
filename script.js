@@ -24,10 +24,14 @@ function addCourse(numberForm) {
     form.appendChild(div);
 }
 
-function clearAll() {
-    const inputs = document.querySelectorAll('input');
+function clearAll(button) {
+    const container = button.closest('.container');
+
+    const inputs = container.querySelectorAll('input');
+    const gradesInput = container.querySelectorAll('select');
     inputs.forEach(input => input.value = '');
-    document.querySelectorAll("#result").forEach(result => result.innerHTML = '0.00');
+    gradesInput.forEach(gradeInput => gradeInput.value = '');
+    container.querySelector("#result").innerHTML = '';
 }
 
 function Calculate() {
@@ -66,7 +70,7 @@ function Calculate() {
     console.log("CGPA:", cgpa);
 }
 
-function addSem() {
+function addSem(){
     semester += 1;
     formId += 1;
     const container = document.createElement('section');
@@ -76,37 +80,63 @@ function addSem() {
             <div class="main">
                 <h3>Semester ${semester}</h3>
                 <form id='form-${formId}'>
-                    <div class="course-div">
-                        <input type="text" autocomplete="off" placeholder="Course 1" class="course">
-                        <select class="grade half">
-                            <option value="">Enter Grade</option>
-                            <option value="a">A</option>
-                            <option value="b+">B+</option>
-                            <option value="b">B</option>
-                            <option value="c+">C+</option>
-                            <option value="c">C</option>
-                            <option value="f">F</option>
-                        </select>
-                        <input type="number" autocomplete="off" placeholder="Credits" class="credit half">
+                        <div class="course-div">
+                            <input type="text" autocomplete="off" placeholder="Course 1" class="course">
+                            <select class="grade half">
+                                    <option value="">Enter Grade</option>
+                                    <option value="a">A</option>
+                                    <option value="b+">B+</option>
+                                    <option value="b">B</option>
+                                    <option value="c+">C+</option>
+                                    <option value="c">C</option>
+                                    <option value="f">F</option>
+                                </select>
+                            <input type="number" autocomplete="off" placeholder="Credits" class="credit half">
+                        </div>
+                        <div class="course-div">
+                            <input type="text" autocomplete="off" placeholder="Course 2" class="course">
+                            <select class="grade half">
+                                    <option value="">Enter Grade</option>
+                                    <option value="a">A</option>
+                                    <option value="b+">B+</option>
+                                    <option value="b">B</option>
+                                    <option value="c+">C+</option>
+                                    <option value="c">C</option>
+                                    <option value="f">F</option>
+                                </select>
+                            <input type="number" autocomplete="off" placeholder="Credits" class="credit half">
+                        </div>
+                        <div class="course-div">
+                            <input type="text" autocomplete="off" placeholder="Course 3" class="course">
+                            <select class="grade half">
+                                    <option value="">Enter Grade</option>
+                                    <option value="a">A</option>
+                                    <option value="b+">B+</option>
+                                    <option value="b">B</option>
+                                    <option value="c+">C+</option>
+                                    <option value="c">C</option>
+                                    <option value="f">F</option>
+                                </select>
+                            <input type="number" autocomplete="off" placeholder="Credits" class="credit half">
                     </div>
                 </form>
             </div>
             <div class="add-more-course-div">
-                <button onclick="addCourse(${formId})">Add Course</button>
-                <button onclick="addSem()">Add Semester</button>
-                <button onclick="clearAll()">Clear All</button>
-            </div>
+                        <button id="add-course" onclick="addCourse(${formId})">Add Course</button>
+                        <button onclick="addSem()">Add Semester</button>
+                        <button id="clear-course" onclick="clearAll(this)">Clear All</button>
+                    </div>
             <div class="calculate-div">
-                <button onclick="Calculate()">Calculate</button>
+                <button id="calculate" onclick="Calculate()">Calculate</button>
             </div>
         </div>
-        <footer>
+        <footer id="footer">
             <div class="result">
                 <h4>Result</h4>
                 <p>Semester ${semester} GPA <span id="result">0.00</span></p>
             </div>
         </footer>
-    `;
+     ;`
     main.appendChild(container);
 }
 // to be add
@@ -116,5 +146,4 @@ function addSem() {
 // iqra uni grading sheet
 // print out result as pdf
 // add iqra uni logo
-// fixed clear all
 
