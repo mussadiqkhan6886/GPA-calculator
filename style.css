@@ -143,3 +143,14 @@ header{
     top: 5px;
     cursor: pointer;
 }
+.animationCourse{
+    animation: animate 1s  ease-in-out;
+}
+@keyframes animate {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}

@@ -25,7 +25,11 @@ function addCourse(numberForm) {
     form.appendChild(div);
     const mark = div.querySelector('.fa-xmark');
     mark.addEventListener('click', (e) => {
-        e.target.parentElement.remove();
+        e.target.parentElement.classList.add('animationCourse');
+        setTimeout(() => {
+            e.target.parentElement.remove();   
+        }, 1000)
+        
         course -= 1;
     })
 }
@@ -148,8 +152,8 @@ function addSem(){
 
 
 // to be add
-// delete course
 // cgpa
+// add toast notification
 // how to use calculator
 // iqra uni grading sheet
 // print out result as pdf
