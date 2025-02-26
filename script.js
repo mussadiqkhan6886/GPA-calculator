@@ -20,8 +20,14 @@ function addCourse(numberForm) {
             <option value="f">F</option>
         </select>
         <input type="number" autocomplete="off" placeholder="Credits" class="credit half">
+        <i class="fa-solid fa-xmark"></i>
     `;
     form.appendChild(div);
+    const mark = div.querySelector('.fa-xmark');
+    mark.addEventListener('click', (e) => {
+        e.target.parentElement.remove();
+        course -= 1;
+    })
 }
 
 function clearAll(button) {
@@ -139,6 +145,8 @@ function addSem(){
      ;`
     main.appendChild(container);
 }
+
+
 // to be add
 // delete course
 // cgpa

@@ -49,6 +49,7 @@ header{
 }
 .course-div{
     width: 100%;
+    position: relative;
 }
 .course-div .course{
     width: 100%;
@@ -134,5 +135,11 @@ header{
     filter: contrast(200%);
 }
 .grade{
+    cursor: pointer;
+}
+.fa-xmark{
+    position: absolute;
+    right: 10px;
+    top: 5px;
     cursor: pointer;
 }
