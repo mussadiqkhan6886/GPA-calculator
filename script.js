@@ -1,8 +1,11 @@
 const main = document.querySelector('#main');
 const footer = document.querySelector("#footer");
+const aside = document.querySelector('aside');
 let course = 3;
 let semester = 1;
 let formId = 1;
+let sectionCountForCgpa = 1;
+
 function addCourse(numberForm) {
     const form = document.querySelector(`#form-${numberForm}`);
     course += 1;
@@ -149,9 +152,9 @@ function addSem(){
         </footer>
      `;
     main.appendChild(container);
+    sectionCountForCgpa += 1;
+    sectionCountForCgpa > 1 ? aside.classList.remove('hide-aside') : aside.classList.add('hide-aside');
 }
-
-
 
 // to be add
 // cgpa

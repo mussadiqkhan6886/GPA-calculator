@@ -165,3 +165,6 @@ aside{
 aside h4{
     margin-bottom: 10px;
 }
+.hide-aside{
+    display: none;
+}
