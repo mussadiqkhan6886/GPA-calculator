@@ -102,12 +102,12 @@ header{
 #footer{
     margin-top: 10px;
 }
-.result{
+.result-div{
     margin-bottom: 3em;
     text-align: center;
 }
 
-#result{
+.result{
     width: 50px;
     height: 50px;
     background-color: var(--primary-color);

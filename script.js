@@ -41,7 +41,7 @@ function clearAll(button) {
     const gradesInput = container.querySelectorAll('select');
     inputs.forEach(input => input.value = '');
     gradesInput.forEach(gradeInput => gradeInput.value = '');
-    container.querySelector("#result").innerHTML = '';
+    container.querySelector("#resultGpa").innerHTML = '';
 }
 
 function Calculate() {
@@ -70,14 +70,15 @@ function Calculate() {
         });
 
         let gpa = totalCredits ? (totalPoints / totalCredits).toFixed(2) : 'N/A';
-        document.querySelectorAll("#result")[index].innerHTML = gpa;
+        document.querySelectorAll("#resultGpa")[index].innerHTML = gpa;
 
         overallTotalPoints += totalPoints;
         overallTotalCredits += totalCredits;
     });
 
     let cgpa = overallTotalCredits ? (overallTotalPoints / overallTotalCredits).toFixed(2) : 'N/A';
-    console.log("CGPA:", cgpa);
+    document.querySelector('#resultCgpa').innerHTML = cgpa;
+
 }
 
 function addSem(){
@@ -141,19 +142,21 @@ function addSem(){
             </div>
         </div>
         <footer id="footer">
-            <div class="result">
+            <div class="result-div">
                 <h4>Result</h4>
-                <p>Semester ${semester} GPA <span id="result">0.00</span></p>
+                <p>Semester ${semester} GPA <span class="result" id='resultGpa'>0.00</span></p>
             </div>
         </footer>
-     ;`
+     `;
     main.appendChild(container);
 }
+
 
 
 // to be add
 // cgpa
 // add toast notification
+// fixed calculate if credit is empty
 // how to use calculator
 // iqra uni grading sheet
 // print out result as pdf
