@@ -167,8 +167,6 @@ function addSem(){
 }
 
 // to be add
-// add toast notification
-// fixed calculate if credit is empty
 // how to use calculator
 // iqra uni grading sheet
 // print out result as pdf
