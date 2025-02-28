@@ -71,8 +71,18 @@ function Calculate() {
             totalPoints += grade * credit;
             totalCredits += credit;
         });
+        let gpa;
+        // let gpa = totalCredits ? (totalPoints / totalCredits).toFixed(2) : 'N/A';
+        if(totalCredits){
+            gpa = (totalPoints / totalCredits).toFixed(2);
+        }else{
+            gpa = 'N/A';
+            document.querySelector('.bar').classList.add('animationBegin');
 
-        let gpa = totalCredits ? (totalPoints / totalCredits).toFixed(2) : 'N/A';
+            setTimeout(() => {
+                document.querySelector('.bar').classList.remove('animationBegin');
+            }, 3000);
+        }
         document.querySelectorAll("#resultGpa")[index].innerHTML = gpa;
 
         overallTotalPoints += totalPoints;
@@ -157,7 +167,6 @@ function addSem(){
 }
 
 // to be add
-// cgpa
 // add toast notification
 // fixed calculate if credit is empty
 // how to use calculator

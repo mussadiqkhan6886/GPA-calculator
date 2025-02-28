@@ -20,6 +20,7 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
 }
 header{
     margin: 1em 0;
@@ -156,15 +157,37 @@ header{
         opacity: 0;
     }
 }
-aside{
+.aside{
     width: 100%;
     background-color: var(--result-bg);
     text-align: center;
     padding: 0.5rem 0 1rem;
 }
-aside h4{
+.aside h4{
     margin-bottom: 10px;
 }
 .hide-aside{
     display: none;
+}
+
+.toastNotification{
+    position: absolute;
+    bottom: 10px;
+    right: -320px;
+    color: white;
+    animation: 1s ease-in-out forwards;
+}
+.notification{
+    background-color: darkred;
+    padding: 0.8em;
+}
+
+.animationBegin{
+    animation-name: toast;
+}
+
+@keyframes toast {
+    100%{
+        right: 5px;
+    }    
 }
