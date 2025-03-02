@@ -20,7 +20,7 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    overflow: hidden;
+    
 }
 header{
     margin: 1em 0;
@@ -171,13 +171,11 @@ header{
 }
 
 .toastNotification{
-    position: absolute;
+    position:fixed;
     bottom: 10px;
-    right: -320px;
+    right: -1020px;
     color: white;
     animation: 1s ease-in-out forwards;
-}
-.notification{
     background-color: darkred;
     padding: 0.8em;
 }
@@ -190,4 +188,10 @@ header{
     100%{
         right: 5px;
     }    
+}
+
+@media screen and (max-width:390px) {
+    .add-more-course-div button:nth-child(2){
+        width: 30%;
+    }
 }
