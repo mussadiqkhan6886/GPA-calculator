@@ -170,11 +170,15 @@ function addSem(){
     let markSem = document.querySelectorAll('.semDelete');
     markSem.forEach((mar) => {
         mar.addEventListener('click', (e) => {
-            e.target.parentElement.parentElement.remove();
-            sectionCountForCgpa -= 1;
-            semester -= 1;
-            sectionCountForCgpa > 1 ? aside.classList.remove('hide-aside') : aside.classList.add('hide-aside');
-            Calculate();
+            e.target.parentElement.classList.add('animationCourse');
+            setTimeout(() => {
+                e.target.parentElement.parentElement.remove();
+                sectionCountForCgpa -= 1;
+                semester -= 1;
+                sectionCountForCgpa > 1 ? aside.classList.remove('hide-aside') : aside.classList.add('hide-aside');
+                Calculate();
+            }, 1000)
+            
         })
     })
 
@@ -186,3 +190,4 @@ function addSem(){
 // print out result as pdf
 // add iqra uni logo
 // issue with courses
+// onchange event handler
