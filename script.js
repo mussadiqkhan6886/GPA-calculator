@@ -23,17 +23,15 @@ function addCourse(numberForm) {
             <option value="f">F</option>
         </select>
         <input type="number" autocomplete="off" placeholder="Credits" class="credit half">
-        <i class="fa-solid fa-xmark"></i>
+        <i class="fa-solid fa-xmark" id='courseDelete'></i>
     `;
     form.appendChild(div);
-    const mark = div.querySelector('.fa-xmark');
+    const mark = div.querySelector('#courseDelete');
     mark.addEventListener('click', (e) => {
         e.target.parentElement.classList.add('animationCourse');
         setTimeout(() => {
             e.target.parentElement.remove();   
         }, 1000)
-        
-        course -= 1;
     })
 }
 
@@ -97,9 +95,13 @@ function Calculate() {
 function addSem(){
     semester += 1;
     formId += 1;
+    if(semester < 2){
+        semester = 2;
+    }
     const container = document.createElement('section');
     container.innerHTML = `
         <div class="container">
+            <i class="fa-solid fa-xmark" id='semDelete'></i>
             <h2>IQRA UNIVERSITY GPA Calculator</h2>
             <div class="main">
                 <h3>Semester ${semester}</h3>
@@ -164,6 +166,17 @@ function addSem(){
     main.appendChild(container);
     sectionCountForCgpa += 1;
     sectionCountForCgpa > 1 ? aside.classList.remove('hide-aside') : aside.classList.add('hide-aside');
+
+    let markSem = document.querySelectorAll('#semDelete');
+    markSem.forEach((mar) => {
+        mar.addEventListener('click', (e) => {
+            e.target.parentElement.parentElement.remove();
+            sectionCountForCgpa -= 1;
+            semester -= 1;
+            sectionCountForCgpa > 1 ? aside.classList.remove('hide-aside') : aside.classList.add('hide-aside');
+        })
+    })
+
 }
 
 // to be add
@@ -171,4 +184,4 @@ function addSem(){
 // iqra uni grading sheet
 // print out result as pdf
 // add iqra uni logo
-
+// issue with courses

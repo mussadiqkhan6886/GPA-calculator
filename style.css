@@ -40,6 +40,9 @@ header{
     max-width: 480px;
     margin: 0 0.5rem;
 }
+#semDelete{
+    top: 0;
+}
 .container h2{
     margin: 0 0 1.1em 0;
     text-transform: uppercase;
@@ -141,6 +144,9 @@ header{
     cursor: pointer;
 }
 .fa-xmark{
+    cursor: pointer;
+}
+#courseDelete{
     position: absolute;
     right: 10px;
     top: 5px;
