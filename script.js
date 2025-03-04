@@ -23,10 +23,10 @@ function addCourse(numberForm) {
             <option value="f">F</option>
         </select>
         <input type="number" autocomplete="off" placeholder="Credits" class="credit half">
-        <i class="fa-solid fa-xmark" id='courseDelete'></i>
+        <i class="fa-solid fa-xmark courseDelete" ></i>
     `;
     form.appendChild(div);
-    const mark = div.querySelector('#courseDelete');
+    const mark = div.querySelector('.courseDelete');
     mark.addEventListener('click', (e) => {
         e.target.parentElement.classList.add('animationCourse');
         setTimeout(() => {
@@ -101,7 +101,7 @@ function addSem(){
     const container = document.createElement('section');
     container.innerHTML = `
         <div class="container">
-            <i class="fa-solid fa-xmark" id='semDelete'></i>
+            <i class="fa-solid fa-xmark semDelete" ></i>
             <h2>IQRA UNIVERSITY GPA Calculator</h2>
             <div class="main">
                 <h3>Semester ${semester}</h3>
@@ -167,7 +167,7 @@ function addSem(){
     sectionCountForCgpa += 1;
     sectionCountForCgpa > 1 ? aside.classList.remove('hide-aside') : aside.classList.add('hide-aside');
 
-    let markSem = document.querySelectorAll('#semDelete');
+    let markSem = document.querySelectorAll('.semDelete');
     markSem.forEach((mar) => {
         mar.addEventListener('click', (e) => {
             e.target.parentElement.parentElement.remove();

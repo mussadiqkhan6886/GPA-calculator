@@ -40,7 +40,7 @@ header{
     max-width: 480px;
     margin: 0 0.5rem;
 }
-#semDelete{
+.semDelete{
     top: 0;
 }
 .container h2{
@@ -146,7 +146,7 @@ header{
 .fa-xmark{
     cursor: pointer;
 }
-#courseDelete{
+.courseDelete{
     position: absolute;
     right: 10px;
     top: 5px;
