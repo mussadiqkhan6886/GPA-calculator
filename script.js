@@ -177,6 +177,7 @@ function addSem(){
                 semester -= 1;
                 sectionCountForCgpa > 1 ? aside.classList.remove('hide-aside') : aside.classList.add('hide-aside');
                 Calculate();
+                document.querySelector('.bar').classList.remove('animationBegin');
             }, 1000)
             
         })

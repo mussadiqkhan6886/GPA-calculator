@@ -23,10 +23,17 @@ body{
     
 }
 header{
-    margin: 1em 0;
     font-size: 1.2rem;
+    gap: 10px;
+    display: flex;
+    background-color: rgb(184, 184, 184);
+    color: white;
+    width: 100%;
+    padding-left: 10px;
 }
+
 #main{
+    padding-top: 10px;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
